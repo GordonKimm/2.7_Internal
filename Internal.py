@@ -1,7 +1,11 @@
 """ This Program is a Pizza menu system where the user will be able
 to order food and drinks obtain it as takeway or delivery.
 """
-
+Pizzas = [["Meatlovers", "Pepperoni, sausage, bacon, ham, ground beef", 13.99]
+          ["BBQ Chicken", "Grilled chicken, BBQ sauce, red onions, cilantro", 12.99 ] 
+          ["Buffalo Ranch", "Spicy buffalo chicken, ranch drizzle, red onions", 12.99]
+          ["🍕 THE GOLDEN SUPREME", "Handcrafted 24K Gold-Infused Dough\nStuffed with imported Italian buffalo mozzarella & white truffle butter\nOrganic San Marzano tomatoes, slow-cooked for 12 hours\nnfused with Iranian saffron & 100-year-aged balsamic vinegar\nBeluga Caviar-Topped Burrata\nAged Parmigiano-Reggiano (36 months)"]
+]
 
 
 
