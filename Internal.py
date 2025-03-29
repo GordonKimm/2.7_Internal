@@ -2,15 +2,16 @@
 to order food and drinks obtain it as takeway or delivery.
 """
 import time
-Pizzas = [["Meatlovers", "Pepperoni, sausage, bacon, ham, ground beef", 13.99],
-          ["BBQ Chicken", "Grilled chicken, BBQ sauce, red onions, cilantro", 12.99 ], 
-          ["Buffalo Ranch", "Spicy buffalo chicken, ranch drizzle, red onions", 12.99],
-          ["🍕 THE GOLDEN SUPREME", "Handcrafted 24K Gold-Infused Dough Stuffed with imported Italian buffalo mozzarella & white truffle butter Organic San Marzano tomatoes, slow-cooked for 12 hours infused with Iranian saffron & 100-year-aged balsamic vinegar Beluga Caviar-Topped Burrata Aged Parmigiano-Reggiano (36 months) Japanese A5 Wagyu Beef – Seared & thinly sliced Maine Lobster Medallions – Butter-poached to perfection A bottle of Dom Pérignon Champagne", 1499.99]
+Pizzas = [{"name": "Meatlovers", "Ingredients": "Pepperoni, sausage, bacon, ham, ground beef","price" : 13.99},
+          {"name": "BBQ Chicken", "Ingredients": "Grilled chicken, BBQ sauce, red onions, cilantro", "price" : 12.99 }, 
+          {"name": "Buffalo Ranch", "Ingredients": "Spicy buffalo chicken, ranch drizzle, red onions", "price" : 12.99},
+          {"name": "🍕 THE GOLDEN SUPREME", "Ingredients": "Handcrafted 24K Gold-Infused Dough Stuffed with imported Italian buffalo mozzarella & white truffle butter Organic San Marzano tomatoes, slow-cooked for 12 hours infused with Iranian saffron & 100-year-aged balsamic vinegar Beluga Caviar-Topped Burrata Aged Parmigiano-Reggiano (36 months) Japanese A5 Wagyu Beef – Seared & thinly sliced Maine Lobster Medallions – Butter-poached to perfection A bottle of Dom Pérignon Champagne", "price" : 1499.99}
 ]
+"""This function arranges the list above me in a tidy form for the customers to see """
 def arranged_list():
     for pizza in Pizzas:
         print("--" * 30)
-        print(f"Pizza: {pizza[0]}")
+        print(f"Pizza: {pizza[0]}") #pizza[0] refers to the first element in the pizza entry so it calls the first element of the list into the function#
         time.sleep(0.75)
         print()
         print(f"Ingredients: {pizza[1]}")
@@ -20,7 +21,12 @@ def arranged_list():
         time.sleep(0.75)
         print("--" * 30)
         print()
-    
+
+def build_pizza():
+    print("Lets make a custom Pizza!")
+    time.sleep(0.75)
+    user_name_pizza = input("Enter the name of your pizza")
+
 
 
 
@@ -77,7 +83,5 @@ def display_menu():
             break
         else:
             print("Invalid option, please try again.")
-        time.sleep(60)
-
 
 display_menu()
