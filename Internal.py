@@ -11,13 +11,13 @@ Pizzas = [{"name": "Meatlovers", "Ingredients": "Pepperoni, sausage, bacon, ham,
 def arranged_list():
     for pizza in Pizzas:
         print("--" * 30)
-        print(f"Pizza: {pizza[0]}") #pizza[0] refers to the first element in the pizza entry so it calls the first element of the list into the function#
+        print(f"Pizza: {pizza['name']}") #pizza[0] refers to the first element in the pizza entry so it calls the first element of the list into the function#
         time.sleep(0.75)
         print()
-        print(f"Ingredients: {pizza[1]}")
+        print(f"Ingredients: {pizza['Ingredients']}")
         time.sleep(0.75)
         print()
-        print(f"Price: {pizza[2]}$")
+        print(f"Price: {pizza['price']}$")
         time.sleep(0.75)
         print("--" * 30)
         print()
