@@ -8,7 +8,7 @@ Pizzas = [{"name": "Meatlovers", "ingredients": "Pepperoni, sausage, bacon, ham,
           {"name": "Buffalo Ranch", "ingredients": "Spicy buffalo chicken, ranch drizzle, red onions", "price" : 12.99},
           {"name": "🍕 THE GOLDEN SUPREME", "ingredients": "Handcrafted 24K Gold-Infused Dough Stuffed with imported Italian buffalo mozzarella & white truffle butter Organic San Marzano tomatoes, slow-cooked for 12 hours infused with Iranian saffron & 100-year-aged balsamic vinegar Beluga Caviar-Topped Burrata Aged Parmigiano-Reggiano (36 months) Japanese A5 Wagyu Beef – Seared & thinly sliced Maine Lobster Medallions – Butter-poached to perfection A bottle of Dom Pérignon Champagne", "price" : 1499.99}
 ]
-
+Cart = []
 def get_name():
     name = input("Enter your name: ")
     return name
@@ -28,7 +28,7 @@ def order_selection():
                 print(f"\nContact Number: {user_phone_number}")
                 return "Delivery", user_address, user_phone_number
             except ValueError:
-                print("This is a invalid input please only enters numbers with your phone number\n")
+                print("\nThis is a invalid input please only enters numbers with your phone number")
         
         elif selection_choice == '2':
             print("You have chosen pickup")
@@ -38,7 +38,7 @@ def order_selection():
                 print(f"\nContact Number: {user_phone_number}")
                 return "Pickup", user_phone_number
             except ValueError:
-                print("This is a invalid input please only enters numbers with your phone number\n")
+                print("\nThis is a invalid input please only enters numbers with your phone number\n")
         else:
             print("\nPLEASE ENTER ONLY DISPLAYED NUMBERS\n")
 
@@ -74,34 +74,47 @@ and at the end of the function it will ask if they would like extra toppings"""
 def build_pizza():
     print("\n🍕 Let's make a custom Pizza!")
     while True:
-       new_pizza_name = input("Enter the name of your pizza: ").strip()
-       if new_pizza_name:
-        break
+        new_pizza_name = input("Enter the name of your pizza: ").strip()
+        if new_pizza_name:
+            break
     while True:
-        new_pizza_ingredients = input("Enter the ingredients (separate with commas): ").strip()
-        if new_pizza_ingredients:
-            break
-        print("Ingredients cannot be empty. Please enter at least one ingredient.")
-    while True:
-        print("\nChoose a size:")
-        print("1. Small - $7.00")
-        print("2. Medium - $10.00")
-        print("3. Large - $15.00")
-        size_choice = input("Enter the number for your pizza size: ").strip()
-        if size_choice == '1':
-            new_price = 7.00
-            size = "Small"
-            break
-        elif size_choice == '2':
-            new_price = 10.00
-            size = "Medium"
-            break
-        elif size_choice == '3':
-            new_price = 15.00
-            size = "Large"
-            break
+        new_pizza_ingredients = print("\nMeat: \n1. Bacon\n2. Ground beef\n3. Chicken\n4. Salami\n5. Anchovies ")
+        meat_options = {
+        '1': "Bacon",
+        '2': "Ground beef",
+        '3': "Chicken",
+        '4': "Salami",
+        '5': "Anchovies"
+        }
+
+        new_meat = input("Enter the number that corresponds to your selection: ").strip()
+        if new_meat in meat_options:
+            selected_meat = meat_options[new_meat]
+            new_pizza_ingredients.append(selected_meat)
+            print(f"You selected {selected_meat}.")
         else:
-            print(" Invalid choice. Please enter 1, 2, or 3.")
+            print("Invalid selection. Please enter a number between 1 and 5.")
+            print("\nYour pizza ingredients:", new_pizza_ingredients)
+        while True:
+            print("\nChoose a size:")
+            print("1. Small - $7.00")
+            print("2. Medium - $10.00")
+            print("3. Large - $15.00")
+            size_choice = input("Enter the number for your pizza size: ").strip()
+            if size_choice == '1':
+                new_price = 7.00
+                size = "Small"
+                break
+            elif size_choice == '2':
+                new_price = 10.00
+                size = "Medium"
+                break
+            elif size_choice == '3':
+                new_price = 15.00
+                size = "Large"
+                break
+            else:
+                print(" Invalid choice. Please enter 1, 2, or 3.")
     new_pizza = {
         "name": new_pizza_name,
         "ingredients": new_pizza_ingredients,
@@ -120,7 +133,7 @@ def build_pizza():
 def display_menu():
     while True:
         print("\n🔥 PIZZA MENU 🔥")
-        print("Pizza sizes")
+        print()
         print("1. MENU")
         print()
         print("2. 🍕 BUILD YOUR OWN PIZZA ")
@@ -146,6 +159,7 @@ def display_menu():
             break
         else:
             print("Invalid option, please try again.")
+
 input("Enter to start Order: ")
 print()
 time.sleep(0.75)
