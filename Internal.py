@@ -46,10 +46,6 @@ def order_selection():
 
 
 
-
-
-
-
 """This function arranges the list above me in a tidy form for the customers to see """
 def arranged_list():
     if not Pizzas:
@@ -78,7 +74,9 @@ def build_pizza():
         if new_pizza_name:
             break
     while True:
-        new_pizza_ingredients = print("\nMeat: \n1. Bacon\n2. Ground beef\n3. Chicken\n4. Salami\n5. Anchovies ")
+        new_pizza_ingredients = []
+        print("\nMeat: \n1. Bacon\n2. Ground beef\n3. Chicken\n4. Salami\n5. Anchovies ")
+        new_meat = input("Enter the number that corresponds to your selection: ").strip()
         meat_options = {
         '1': "Bacon",
         '2': "Ground beef",
@@ -86,15 +84,44 @@ def build_pizza():
         '4': "Salami",
         '5': "Anchovies"
         }
-
-        new_meat = input("Enter the number that corresponds to your selection: ").strip()
         if new_meat in meat_options:
             selected_meat = meat_options[new_meat]
             new_pizza_ingredients.append(selected_meat)
             print(f"You selected {selected_meat}.")
         else:
             print("Invalid selection. Please enter a number between 1 and 5.")
-            print("\nYour pizza ingredients:", new_pizza_ingredients)
+    while True:
+        print("\nMeat: \n1. Mozzarella\n2. Parmesan\n3. Cheddar\n4. Feta\n5. Brie")
+        new_cheese = input("Enter the number that corresponds to your selection: ").strip()
+        cheese_options = {
+        '1': "Mozzarella",
+        '2': "Parmesan",
+        '3': "Cheddar",
+        '4': "Feta",
+        '5': "Brie"
+        }
+        if new_cheese in cheese_options:
+            selected_cheese = cheese_options[new_cheese]
+            new_pizza_ingredients.append(selected_cheese)
+            print(f"You selected {selected_cheese}.")
+        else:
+            print("Invalid selection. Please enter a number between 1 and 5.")
+            while True:
+        print("\nMeat: \n1. Mozzarella\n2. Parmesan\n3. Cheddar\n4. Feta\n5. Brie")
+        new_cheese = input("Enter the number that corresponds to your selection: ").strip()
+        cheese_options = {
+        '1': "Tomatoes",
+        '2': "Bell Peppers",
+        '3': "Cheddar",
+        '4': "Feta",
+        '5': "Brie"
+        }
+        if new_cheese in cheese_options:
+            selected_cheese = cheese_options[new_cheese]
+            new_pizza_ingredients.append(selected_cheese)
+            print(f"You selected {selected_cheese}.")
+        else:
+            print("Invalid selection. Please enter a number between 1 and 5.")
         while True:
             print("\nChoose a size:")
             print("1. Small - $7.00")
